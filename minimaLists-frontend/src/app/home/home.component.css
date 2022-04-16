@@ -1,8 +1,8 @@
 .homePageImgContainer {
-  height: 80%;
+    height: 80%;
 }
 
 img.homePageImg {
-  width: 80%;
-  height: 90%;
+    width: 75%;
+    height: 80%;
 }
