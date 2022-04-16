@@ -23,10 +23,6 @@ const options: cors.CorsOptions = {
 
 app.use(cors(options));
 
-app.get("/", async (req, res) => {
-  res.send("Hello World");
-})
-
 app.get("/isAlive", async (req, res) => {
 	res.status(200).send();
 });
