@@ -1,5 +1,5 @@
 # To-Do List App
-This is a To-Do List Application built using Node.js, Express and TypeScript. This repository only holds the back-end code of the application. For front-end (made using VanillajJS and Bootstrap 5) please [click here](https://github.com/namrata-karmakar/todo-vanilla-ui).
+This is a To-Do List Application built using MongoDB, Express, Angular, Node.js and TypeScript. 
 ## API Reference
 
 #### Get all todos for a particular userID
@@ -47,7 +47,7 @@ To run tests, run the following command
 Clone the project
 
 ```bash
-  git clone https://github.com/namrata-karmakar/todo-ts-tdd
+  git clone https://github.com/namrata-karmakar/minimaLists
 ```
 
 Go to the project directory
