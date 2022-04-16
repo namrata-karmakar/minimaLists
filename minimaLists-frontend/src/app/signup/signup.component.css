@@ -1,0 +1,23 @@
+.signupPage {
+    overflow: hidden;
+}
+mat-card {
+    width: 30%;
+    display: block;
+    margin: 2% auto;
+    border-radius: 4%;
+    box-shadow: 0 0 4% #888;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+mat-form-field {
+    margin: 1% 0;
+}
+.signupPageButtons button {
+    margin: 2% 2% 0 0;
+}
+mat-icon {
+    cursor: pointer;
+}

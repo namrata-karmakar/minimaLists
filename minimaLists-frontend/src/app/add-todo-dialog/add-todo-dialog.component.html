@@ -1,0 +1,41 @@
+<form [formGroup]="addTodoFormGroup" (ngSubmit)="onSubmit()">
+  <div>
+    <h1 mat-dialog-title>Add a To Do</h1>
+    <div fxLayout="column" mat-dialog-content>
+      <mat-form-field appearance="outline">
+        <mat-label>To Do</mat-label>
+        <input
+          matInput
+          formControlName="todo"
+          required
+          placeholder="Ex. Rate this app"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select 
+        formControlName="status"
+        required>
+          <mat-option
+            *ngFor="let status of statusOptions"
+            [value]="status.value"
+          >
+            {{ status.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        cdkFocusInitial
+
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</form>

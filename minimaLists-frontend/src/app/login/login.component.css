@@ -1,0 +1,24 @@
+.loginPage {
+  overflow: hidden;
+}
+.loginPageButtons button {
+  margin: 0 2% 2% 0;
+}
+@media only screen and (max-width: 768px) {
+  mat-card {
+    width: 75%;
+    display: block;
+    margin: 30% auto;
+    border-radius: 4%;
+    box-shadow: 0 0 4% #888;
+  }
+}
+@media only screen and (min-width: 768px) {
+  mat-card {
+    width: 30%;
+    display: block;
+    margin: 5% auto;
+    border-radius: 4%;
+    box-shadow: 0 0 4% #888;
+  }
+}

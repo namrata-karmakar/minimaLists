@@ -1,0 +1,11 @@
+{
+   "INVALID_EMAIL_MESSAGE": "Enter Valid Email",
+   "INVALID_PASSWORD_MESSAGE": "Password must contain atleast 1 capital letter, 1 small letter, 1 number, 1 special character and must be atleast 8 characters long",
+   "AGE_ERROR_MESSAGE": "Age cannot be below 18",
+   "TNC_ERROR_MESSAGE": "Terms and Conditions must be accepted, Invalid Input",
+   "INVALID_TODO_MESSAGE": "Should be atleast one character and atmost 1000 characters",
+   "INVALID_STATUS_MESSAGE": "Invalid Status",
+   "INVALID_ID_MESSAGE": "Invalid ID",
+   "INVALID_USERID_MESSAGE": "Invalid User ID",
+   "INVALID_CREATEDON_MESSAGE": "Created On date invalid"
+}

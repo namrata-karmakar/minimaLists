@@ -1,0 +1,51 @@
+<app-navbar> </app-navbar>
+<div class="loginPage" fxLayout="column" fxLayoutAlign="start center">
+  <mat-card>
+    <h2>LOGIN</h2>
+    <p>Don't have an account? <a routerLink="/page/signup">Sign Up</a></p>
+    <form [formGroup]="loginFormGroup" fxLayout="column" fxLayoutAlign="none">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          matInput
+          formControlName="username"
+          placeholder="abc@gmail.com"
+          required
+          email
+        />
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="loginPageButtons">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="!loginFormGroup.valid"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <button mat-stroked-button routerLink="/page/signup">Sign Up</button>
+      </div>
+    </form>
+    <a href="#">Forgot Password?</a>
+  </mat-card>
+</div>

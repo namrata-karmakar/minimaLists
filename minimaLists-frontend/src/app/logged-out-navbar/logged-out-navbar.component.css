@@ -1,0 +1,35 @@
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.topnav {
+  height: 10%;
+} 
+.logo {
+  font-family: "Rock Salt", cursive;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+@media only screen and (min-width: 600px) and (max-width: 959.98px) {
+  .navbarButtonsContainer {
+    display: none;
+  }
+}
+@media only screen and (min-width: 960px) and (max-width: 1279.98px) {
+  .navbarButtonsContainer {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1280px) and (max-width: 1919.98px) {
+  .navbarButtonsContainer {
+    width: 25%;
+  }
+}
+
+
+

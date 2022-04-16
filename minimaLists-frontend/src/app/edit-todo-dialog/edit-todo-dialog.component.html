@@ -1,0 +1,42 @@
+<form [formGroup]="editTodoFormGroup">
+    <div>
+      <h1 mat-dialog-title>Edit To Do</h1>
+      <div fxLayout="column" mat-dialog-content>
+        <mat-form-field appearance="outline">
+          <mat-label>To Do</mat-label>
+          <input
+            matInput
+            formControlName="todo"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select 
+          formControlName="status"
+          required>
+            <mat-option
+              *ngFor="let status of statusOptions"
+              [value]="status.value"
+            >
+              {{ status.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          (click)="editTodo(data)"
+          cdkFocusInitial
+          [disabled]="!editTodoFormGroup.valid"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </form>
+  

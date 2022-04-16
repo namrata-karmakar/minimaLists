@@ -1,0 +1,16 @@
+<mat-toolbar
+  class="topnav"
+  color="primary"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <span class="logo" routerLink="/">MinimaLists</span>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="end center"
+    class="navbarButtonsContainer"
+    *ngIf="!(isHandset$ | async)"
+  >
+    <app-logout></app-logout>
+  </div>
+</mat-toolbar>

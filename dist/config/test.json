@@ -1,0 +1,7 @@
+{
+    "env": "test",
+    "port": 3013,
+    "dbURL": "mongodb://localhost:27017",
+    "dbName": "toDoTest",
+    "secretString": "namrata"
+}

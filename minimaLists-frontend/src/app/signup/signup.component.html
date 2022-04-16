@@ -1,0 +1,123 @@
+<app-navbar> </app-navbar>
+<div class="signupPage">
+  <mat-card>
+    <h2>SIGN UP</h2>
+    <p>Have an account? <a routerLink="/page/login">Login.</a></p>
+    <form [formGroup]="signupFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          matInput
+          formControlName="username"
+          placeholder="abc@gmail.com"
+          required
+        />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="username.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="username.hasError('required')">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePassword"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.hasError('required')">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="password.hasError('pattern')">
+          Password must contain 1 capital letter, 1 small letter, 1 number, 1
+          special character (other than @), and must be atleast 8 characters
+          long.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          [type]="hideConfirmPassword ? 'password' : 'text'"
+          formControlName="confirmPassword"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hideConfirmPassword = !hideConfirmPassword"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hideConfirmPassword"
+        >
+          <mat-icon>{{
+            hideConfirmPassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="confirmPassword.hasError('required')">
+          Confirm Password is required
+        </mat-error>
+      </mat-form-field>
+      <mat-error
+        *ngIf="signupFormGroup.errors?.passwordsMismatch"
+        class="cross-validation-error-message alert alert-danger"
+      >
+        Passwords don't match.
+      </mat-error>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input
+          matInput
+          placeholder="MM/DD/YYYY"
+          [matDatepicker]="picker"
+          formControlName="dob"
+          required
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="dob.hasError('required')">
+          Date of Birth is required
+        </mat-error>
+        <mat-error *ngIf="dob.hasError('ageOutOfRange')">
+          User must be above 18 years old
+        </mat-error>
+      </mat-form-field>
+
+      <mat-checkbox formControlName="tnc" requiredTrue
+        >I have read and agree with the Terms and Conditions</mat-checkbox
+      >
+      <mat-error *ngIf="tnc.invalid && (tnc.dirty || tnc.touched)">
+        Terms and Conditions must be accepted
+      </mat-error>
+
+      <div class="signupPageButtons">
+        <button
+          mat-raised-button
+          type="submit"
+          color="primary"
+          [disabled]="!signupFormGroup.valid"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <button type="button" (click)="openSnackBar()" mat-stroked-button>Reset</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

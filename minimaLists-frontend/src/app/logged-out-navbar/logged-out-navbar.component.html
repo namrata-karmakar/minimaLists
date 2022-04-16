@@ -1,0 +1,18 @@
+<mat-toolbar
+  class="topnav"
+  color="primary"
+  fxLayout="row"
+  fxLayoutAlign="space-between center"
+>
+  <span class="logo" routerLink="/home">MinimaLists</span>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    class="navbarButtonsContainer"
+    *ngIf="!(isHandset$ | async)"
+  >
+    <button mat-raised-button routerLink="/page/home">Home</button>
+    <button mat-raised-button routerLink="/page/login">Login</button>
+    <button mat-raised-button routerLink="/page/signup">Sign Up</button>
+  </div>
+</mat-toolbar>
