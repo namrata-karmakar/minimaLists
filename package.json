@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon dist/server.js",
+    "start": "nodemon dist/server.js",
     "start:debug": "tsc && node --inspect dist/server.js",
     "test": "jest --coverage --runInBand --config ./jest.config.js",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand --config ./jest.config.js",
